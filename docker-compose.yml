@@ -1,0 +1,29 @@
+services:
+  backend:
+    build: ./backend
+    container_name: exam_backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env.example
+    volumes:
+      - ./backend:/app
+  frontend:
+    build: ./frontend
+    container_name: exam_frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+    environment:
+      - VITE_API_BASE=http://localhost:8000
+  nginx:
+    image: nginx:alpine
+    container_name: exam_nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./devops/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - frontend
+      - backend
