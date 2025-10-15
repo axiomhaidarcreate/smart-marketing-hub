@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Exam Platform
 
 منصة اختبارات متكاملة (Backend + Frontend + Reports + DevOps).
@@ -20,3 +21,7 @@ docker compose up -d --build
 
 ## الترخيص
 MIT
+=======
+# smart-marketing-hub
+Eng Mazen Haidar
+>>>>>>> ca452d6973391103401c7719590fb281a7b8564f
