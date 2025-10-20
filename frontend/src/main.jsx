@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import App from './App'
+import './styles.css'
 
-function App() {
-  return (
-    <div style={{padding:16}}>
-      <h1>Exam Platform</h1>
-      <p>Frontend placeholder is running. Set <code>VITE_API_BASE</code> to your backend URL.</p>
-    </div>
-  )
-}
+const container = document.getElementById('root')
+const root = createRoot(container)
 
-createRoot(document.getElementById('root')).render(<App />)
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+)
